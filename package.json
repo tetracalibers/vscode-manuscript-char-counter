@@ -10,17 +10,9 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:markdown-char-counter.helloWorld"
+    "onLanguage:markdown"
   ],
   "main": "./dist/extension.js",
-  "contributes": {
-    "commands": [
-      {
-        "command": "markdown-char-counter.helloWorld",
-        "title": "Hello World"
-      }
-    ]
-  },
   "scripts": {
     "vscode:prepublish": "yarn run package",
     "compile": "webpack",

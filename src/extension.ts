@@ -2,6 +2,7 @@
 // Import the module and reference it with the alias vscode in your code below
 import {
   commands,
+  Disposable,
   ExtensionContext,
   StatusBarAlignment,
   StatusBarItem,
@@ -17,16 +18,10 @@ export function activate(context: ExtensionContext) {
   console.log('Congratulations, your extension "markdown-char-counter" is now active!')
 
   const charCounter = new CharCounter()
+  const controller = new CharCountController(charCounter)
 
-  // The command has been defined in the package.json file
-  // Now provide the implementation of the command with registerCommand
-  // The commandId parameter must match the command field in package.json
-  let disposable = commands.registerCommand("markdown-char-counter.helloWorld", () => {
-    charCounter.updateCount()
-  })
-
+  context.subscriptions.push(controller)
   context.subscriptions.push(charCounter)
-  context.subscriptions.push(disposable)
 }
 
 // this method is called when your extension is deactivated
@@ -67,5 +62,29 @@ class CharCounter {
     docContent = docContent.replace(/\r?\n/g, "")
     //
     return docContent.length
+  }
+}
+
+class CharCountController {
+  #charCounter: CharCounter
+  #disposable: Disposable
+
+  constructor(charCounter: CharCounter) {
+    this.#charCounter = charCounter
+
+    const subscriptions: Disposable[] = []
+    window.onDidChangeTextEditorSelection(this.#onEvent, this, subscriptions)
+    window.onDidChangeActiveTextEditor(this.#onEvent, this, subscriptions)
+
+    this.#charCounter.updateCount()
+    this.#disposable = Disposable.from(...subscriptions)
+  }
+
+  dispose() {
+    this.#disposable.dispose()
+  }
+
+  #onEvent() {
+    this.#charCounter.updateCount()
   }
 }
