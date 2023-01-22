@@ -54,8 +54,6 @@ The syntax `![text](https://example.com)` is similar.
 
 All spaces are removed before counting the number of characters.
 
----
-
 ## 日本語によるドキュメント
 
 markdownでの原稿執筆に役立つツールです。
