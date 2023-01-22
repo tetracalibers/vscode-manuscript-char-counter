@@ -1,71 +1,103 @@
-# markdown-char-counter README
+# Markdown Character Counter for VScode
 
-This is the README for your extension "markdown-char-counter". After writing up a brief description, we recommend including the following sections.
+## Documentation in English
 
-## Features
+Tools for writing markdown manuscripts.
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+To convert the number of characters that the reader will eventually read, the number of characters is displayed in real time, excluding code blocks, etc.
 
-For example if there is an image subfolder under your extension project workspace:
+Specifically, the extension counts characters based on the following rules.
 
-\!\[feature X\]\(images/feature-x.png\)
+### Exclude code blocks
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+The area enclosed by <code>```</code> is counted as zero characters.
 
-## Requirements
+That is, the following example counts as zero characters.
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+<pre>
+<code>```js
+console.log('Not counted here.')
+```</code>
+</pre>
 
-## Extension Settings
+### Exclude YAML Front-matter
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+The area enclosed by `---` is counted as zero characters.
 
-For example:
+That is, the following example counts as zero characters.
 
-This extension contributes the following settings:
+```
+---
+title: Not counted here.
+---
+```
 
-- `myExtension.enable`: enable/disable this extension
-- `myExtension.thing`: set to `blah` to do something
+### Exclude link URLs
 
-## Known Issues
+Readers will only read the link text, and including long URLs in the character count of the manuscript will introduce errors.
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+Therefore, links are converted to the number of characters in the link text only.
 
-## Release Notes
+The following example counts as 4 characters.
 
-Users appreciate release notes as you update your extension.
+```
+[text](https://example.com)
+```
 
-### 1.0.0
+The syntax `![text](URL)` is similar.
 
-Initial release of ...
+### Exclude all spaces, tabs, and newlines
 
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
+All spaces are removed before counting the number of characters.
 
 ---
 
-## Following extension guidelines
+## 日本語によるドキュメント
 
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
+markdownでの原稿執筆に役立つツールです。
 
-- [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
+最終的に読者が読むことになる文字数を換算するため、コードブロックなどを除いた文字数をリアルタイムで表示します。
 
-## Working with Markdown
+具体的には、この拡張機能は次の規則に基づいて文字数をカウントします。
 
-**Note:** You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
+### コードブロックを除外
 
-- Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-- Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-- Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
+<code>```</code>で囲まれた複数行の領域は0文字としてカウントされます。
 
-### For more information
+つまり、次の例は0文字になります。
 
-- [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-- [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+<pre>
+<code>```js
+console.log('ここはカウントされません。')
+```</code>
+</pre>
 
-**Enjoy!**
+### YAML Front-matterを除外
+
+`---`で囲まれた複数行の領域は0文字としてカウントされます。
+
+つまり、次の例は0文字になります。
+
+```
+---
+title: ここはカウントされません。
+---
+```
+
+### リンクのURLを除外
+
+読者が読むのはリンクテキストだけであり、長いURLを原稿の文字数に含めると誤差が生じます。
+
+そのため、リンクはリンクテキストのみの文字数を換算します。
+
+次の例は4文字としてカウントされます。
+
+```
+[テキスト](https://example.com)
+```
+
+`![テキスト](URL)`という構文も同様です。
+
+### すべての空白、タブ、改行を除外
+
+空白文字はすべて削除した上で文字数をカウントします。
