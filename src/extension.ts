@@ -55,10 +55,8 @@ class CharCounter {
     docContent = docContent.replace(/---\r?\n[\s\S]*?\r?\n---/g, "")
     // リンクURL除外
     docContent = docContent.replace(/\[(.*?)\]\(.*?\)/g, "$1")
-    // 空白除去
-    docContent = docContent.replace(/\s/g, "")
-    // 改行文字除去
-    docContent = docContent.replace(/\r?\n/g, "")
+    // 半角スペース・タブ・改行・全角スペース除去
+    docContent = docContent.replace(/[\s　]/g, "")
     //
     return docContent.length
   }
