@@ -43,7 +43,7 @@ class CharCounter {
     const doc = editor.document
     if (doc.languageId !== "markdown") this.#statusBarItem.hide()
     const charCount = this.#getCharCount(doc)
-    this.#statusBarItem.text = charCount + (charCount !== 1 ? " Chars" : "Char")
+    this.#statusBarItem.text = charCount + " Chars"
     this.#statusBarItem.show()
   }
 
