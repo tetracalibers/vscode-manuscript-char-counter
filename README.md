@@ -8,7 +8,7 @@
 
 Tools for writing markdown manuscripts.
 
-To convert the number of characters that the reader will eventually read, the number of characters is displayed in real time, excluding code blocks, etc.
+To convert the amount of text that the reader will eventually read, the number of characters is displayed in real time, excluding code blocks, etc.
 
 Specifically, the extension counts characters based on the following rules.
 
@@ -58,7 +58,7 @@ All spaces are removed before counting the number of characters.
 
 markdownでの原稿執筆に役立つツールです。
 
-最終的に読者が読むことになる文字数を換算するため、コードブロックなどを除いた文字数をリアルタイムで表示します。
+最終的に読者が読むことになる文章量を換算するため、コードブロックなどを除いた文字数をリアルタイムで表示します。
 
 具体的には、この拡張機能は次の規則に基づいて文字数をカウントします。
 
