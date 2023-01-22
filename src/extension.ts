@@ -51,8 +51,8 @@ class CharCounter {
     let docContent = doc.getText()
     // コードブロック除外
     docContent = docContent.replace(/```.*?\r?\n[\s\S]*?\r?\n```/g, "")
-    // frontmatter除外
-    docContent = docContent.replace(/---\r?\n[\s\S]*?\r?\n---/g, "")
+    // ファイル冒頭のfrontmatter除外
+    docContent = docContent.replace(/^---\r?\n[\s\S]*?\r?\n---/g, "")
     // リンクURL除外
     docContent = docContent.replace(/\[(.*?)\]\(.*?\)/g, "$1")
     // 半角スペース・タブ・改行・全角スペース除去
