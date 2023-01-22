@@ -2,7 +2,7 @@
   "name": "manuscript-char-counter",
   "displayName": "Markdown Manuscript Character Counter",
   "description": "Real-time display of the number of characters in a markdown document excluding code blocks, etc.",
-  "icon": "https://github.com/tetracalibers/vscode-manuscript-char-counter/raw/img/icon.png",
+  "icon": "https://raw.githubusercontent.com/tetracalibers/vscode-manuscript-char-counter/main/img/icon.png",
   "publisher": "tetracalibers",
   "author": {
     "name": "tomixy",
