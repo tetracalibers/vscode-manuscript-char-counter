@@ -1,5 +1,9 @@
 # Markdown Character Counter for VScode
 
+![Screenshots：status bar](https://github.com/tetracalibers/vscode-manuscript-char-counter/raw/img/statusbar.png)
+
+![Screenshots：3095 Chars](https://github.com/tetracalibers/vscode-manuscript-char-counter/raw/img/3095chars.png)
+
 ## Documentation in English
 
 Tools for writing markdown manuscripts.
