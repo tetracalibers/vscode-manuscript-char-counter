@@ -26,9 +26,9 @@ console.log('Not counted here.')
 
 ### Exclude YAML Front-matter
 
-The area enclosed by `---` is counted as zero characters.
+A multi-line area surrounded by `---` at the beginning of the file is counted as zero characters.
 
-That is, the following example counts as zero characters.
+That is, the following block is counted as zero characters if it is at the beginning of the file.
 
 ```
 ---
@@ -76,9 +76,9 @@ console.log('ここはカウントされません。')
 
 ### YAML Front-matterを除外
 
-`---`で囲まれた複数行の領域は0文字としてカウントされます。
+ファイルの冒頭の`---`で囲まれた複数行の領域は0文字としてカウントされます。
 
-つまり、次の例は0文字になります。
+つまり、次のようなブロックはファイルの冒頭にある場合、0文字としてカウントされます。
 
 ```
 ---
