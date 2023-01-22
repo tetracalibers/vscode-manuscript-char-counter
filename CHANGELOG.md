@@ -1,9 +1,5 @@
 # Change Log
 
-All notable changes to the "markdown-char-counter" extension will be documented in this file.
+## 1.0.1 (2023/01/22 10:35:26)
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
-
-## [Unreleased]
-
-- Initial release
+- Fixed typos in documents
