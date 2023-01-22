@@ -48,7 +48,7 @@ The following example counts as 4 characters.
 [text](https://example.com)
 ```
 
-The syntax `![text](URL)` is similar.
+The syntax `![text](https://example.com)` is similar.
 
 ### Exclude all spaces, tabs, and newlines
 
@@ -100,7 +100,7 @@ title: ここはカウントされません。
 [テキスト](https://example.com)
 ```
 
-`![テキスト](URL)`という構文も同様です。
+`![テキスト](https://example.com)`という構文も同様です。
 
 ### すべての空白、タブ、改行を除外
 
