@@ -1,11 +1,37 @@
 {
-  "name": "markdown-char-counter",
-  "displayName": "MarkdownCharCounter",
-  "description": "Markdown Character Count Without CodeBlock etc.",
-  "version": "0.0.1",
+  "name": "manuscript-char-counter",
+  "displayName": "Markdown Manuscript Character Counter",
+  "description": "Real-time display of the number of characters in a markdown document excluding code blocks, etc.",
+  "icon": "https://github.com/tetracalibers/vscode-manuscript-char-counter/raw/img/icon.png",
+  "publisher": "tetracalibers",
+  "author": {
+    "name": "tomixy",
+    "url": "https://tetracalibers.notion.site/tomixy-s-Biography-ja-6dac9beded064e9b8458145050ededcb"
+  },
+  "version": "1.0.0",
   "engines": {
     "vscode": "^1.74.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tetracalibers/vscode-manuscript-char-counter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tetracalibers/vscode-manuscript-char-counter/issues"
+  },
+  "homepage": "https://github.com/tetracalibers/vscode-manuscript-char-counter#readme",
+  "license": "MIT",
+  "keywords": [
+    "markdown",
+    "md",
+    "character",
+    "char",
+    "count",
+    "counter",
+    "manuscript",
+    "writer",
+    "write"
+  ],
   "categories": [
     "Other"
   ],
